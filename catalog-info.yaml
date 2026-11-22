@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  name: "cloud-devops-portfolio"
+  description: "Cloud and DevOps engineer focused on Linux, OpenStack, Docker, Kubernetes, CI/CD and infrastructure automation."
+  annotations:
+    github.com/project-slug: "MontassarHannachi/cloud-devops-portfolio"
+  tags:
+    - nextjs
+    - portfolio
+    - docker
+    - cloud
+    - devops
+
+spec:
+  type: website
+  lifecycle: experimental
+  owner: group:default/guests
