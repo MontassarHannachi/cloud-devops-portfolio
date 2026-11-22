@@ -522,3 +522,77 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+/* Portfolio v2 - Infrastructure & Delivery */
+.architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.architecture-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 21px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.architecture-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.architecture-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.architecture-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.architecture-card > p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.architecture-card .tag-list {
+  margin-top: 22px;
+}
+
+.release-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 1050px) {
+  .architecture-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .architecture-grid {
+    grid-template-columns: 1fr;
+  }
+}

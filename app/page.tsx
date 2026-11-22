@@ -35,6 +35,41 @@ const projects = [
   }
 ];
 
+const infrastructure = [
+  {
+    number: "01",
+    category: "CLOUD FOUNDATION",
+    title: "Secure Infrastructure",
+    description:
+      "The foundation: provision cloud resources and connect sites through secure network infrastructure.",
+    technologies: ["OpenStack", "Kolla-Ansible", "pfSense", "IPsec", "Zabbix"]
+  },
+  {
+    number: "02",
+    category: "CONTAINER PLATFORM",
+    title: "Container Orchestration",
+    description:
+      "Package applications into containers and manage Kubernetes deployments through a GitOps workflow.",
+    technologies: ["Docker", "Kubernetes", "Flux CD", "GHCR"]
+  },
+  {
+    number: "03",
+    category: "DEVELOPER EXPERIENCE",
+    title: "Self-Service Platform",
+    description:
+      "Provide a developer portal with a software catalog and reusable templates for project creation.",
+    technologies: ["Backstage", "Software Catalog", "Scaffolder"]
+  },
+  {
+    number: "04",
+    category: "AUTOMATED DELIVERY",
+    title: "Build & Deployment",
+    description:
+      "Automate application builds, publish Docker images and deploy to a local server using a self-hosted runner.",
+    technologies: ["GitHub Actions", "Docker Hub", "Docker Compose", "Self-hosted Runner"]
+  }
+];
+
 const certifications = [
   {
     name: "Cisco CCNAv7 – Introduction to Networks",
@@ -87,6 +122,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#infrastructure">Infrastructure</a>
           <a href="#certifications">Certifications</a>
           <a href="#contact">Contact</a>
         </div>
@@ -126,6 +162,7 @@ export default function Home() {
           <div className="hero-meta">
             <span>📍 Tozeur, Tunisia</span>
             <span>Available for opportunities</span>
+            <span className="release-badge">PORTFOLIO VERSION 2</span>
           </div>
         </div>
 
@@ -209,9 +246,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section" id="infrastructure">
+        <div className="section-heading">
+          <p className="eyebrow">04 / INFRASTRUCTURE & DELIVERY</p>
+          <h2>From cloud infrastructure to application delivery.</h2>
+          <p>
+            A practical view of the technologies and workflow explored
+            across my infrastructure, Kubernetes and platform engineering labs.
+          </p>
+        </div>
+
+        <div className="architecture-grid">
+          {infrastructure.map((item) => (
+            <article className="architecture-card" key={item.number}>
+              <div className="architecture-top">
+                <span className="project-number">{item.number}</span>
+                <span className="project-category">{item.category}</span>
+              </div>
+
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+
+              <div className="tag-list">
+                {item.technologies.map((technology) => (
+                  <span className="tag" key={technology}>{technology}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section" id="certifications">
         <div className="section-heading">
-          <p className="eyebrow">04 / LEARNING</p>
+          <p className="eyebrow">05 / LEARNING</p>
           <h2>Certifications & training.</h2>
         </div>
 
@@ -230,7 +298,7 @@ export default function Home() {
       </section>
 
       <section className="section contact" id="contact">
-        <p className="eyebrow">05 / CONTACT</p>
+        <p className="eyebrow">06 / CONTACT</p>
         <h2>Let&apos;s build something reliable.</h2>
         <p>
           Interested in Cloud, DevOps, infrastructure automation
@@ -254,7 +322,7 @@ export default function Home() {
 
       <footer>
         <p>© {new Date().getFullYear()} Montassar Hannachi</p>
-        <p>Designed & built with Next.js</p>
+        <p>Version 2.0 · Designed & built with Next.js</p>
       </footer>
     </main>
   );
